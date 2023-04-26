@@ -16,9 +16,9 @@ body,
 
 body {
   display: grid;
-  place-items: center;
+  /* place-items: center; */
   margin: 0;
-  font-family: "Euclid Circular A", "Poppins";
+  font-family: "Euclid Circular A", "Poppins", sans-serif;
   line-height: 1.5;
   background: #f1f0ff;
   color: #58547b;
@@ -26,13 +26,14 @@ body {
 
 .widget {
   background: #ffffff;
-  /* width: var(--tab-width); */
+  /* width: var(--tab-width);  */
   border-radius: 8px;
 }
 
 .widget > header {
   position: relative;
   display: flex;
+  justify-content: space-between;
   border-bottom: 1px solid #e2e1ef;
 }
 
@@ -63,7 +64,7 @@ body {
 .content {
   position: relative;
   overflow: hidden;
-  height: 200px;
+  height: 92vh;                    /* had to fix to responsive*/
   
 }
 
@@ -77,15 +78,7 @@ body {
   transition: 0.3s;
 }
 
-.underline {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 64px;
-  height: 3px;
-  background: var(--color-primary);
-  transition: 0.2s;
-}
+
 
 h2 {
   margin: 0 0 10px;
@@ -101,4 +94,16 @@ p {
 .content-inner > div {
   width: inherit;
   padding: 20px;
+  display: block;
+}
+
+
+.underline {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 64px;
+  height: 3px;
+  background: var(--color-primary);
+  transition: 0.2s;
 }
