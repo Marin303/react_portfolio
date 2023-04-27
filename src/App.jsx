@@ -1,9 +1,9 @@
-import './App.css';
-
+import "./App.css";
+import Chat from "./Components/Chat";
 import { useState } from "react";
 
-/* const buttonWidth = 64; */
-/* const tabWidth = 300; */
+/*  const buttonWidth = 64;  
+ const tabWidth = 300;   */
 const tabHeaders = ["home", "lock", "settings", "groups", "table_view"];
 /* const tabContent = [];*/
 const App = () => {
@@ -17,7 +17,6 @@ const App = () => {
             onClick={() => setActiveIndex(index)}
             key={tab}
             className={`material-symbols-outlined ${
-              
               activeIndex === index ? "active" : ""
             }`}
           >
@@ -26,22 +25,17 @@ const App = () => {
         ))}
         <div
           className="underline"
-         /*  style={{
-            translate: `${activeIndex ? activeIndex * buttonWidth : 0}px 0`,
-          }} */
+          /* style={{
+    transform: `translateX(${activeIndex * buttonWidth}px)`,
+    width: `${buttonWidth}px`
+  }} */
         ></div>
       </header>
-      
+
       <div className="content">
-        <div
-          className="content-inner"
-          >
-          <div style={{ display: activeIndex === 0 ? "block" : "none" }}>
-            <h2>Home</h2>
-            <p>
-              This is the tab content, you can put anything you like in here.
-            </p>
-          </div>
+        <div className="content-inner">
+          <Chat isActive={activeIndex === 0} />
+         
           <div style={{ display: activeIndex === 1 ? "block" : "none" }}>
             <h2>Account</h2>
             <p>
@@ -71,6 +65,5 @@ const App = () => {
     </article>
   );
 };
-
 
 export default App;
