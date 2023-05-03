@@ -1,5 +1,5 @@
 import './App.css';
-import Chat from "./Components/Chat"
+import Chat from "./Components/Chat/Chat"
 import { useState } from "react";
 
 /*  const buttonWidth = 64;  

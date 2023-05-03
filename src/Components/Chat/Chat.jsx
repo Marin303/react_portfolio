@@ -1,10 +1,11 @@
 
 import React, { useState, useEffect } from "react";
-import "./App.css";
-import Messages from "./components/Messages";
-import Input from "./components/Input";
-import NameSetup from "./components/NameSetup";
-import randomAvatar from "./components/RandomAvatar";
+import "../../App.css"
+import Messages from "./Messages";
+import Input from "./Input";
+import NameSetup from "./NameSetup";
+import randomAvatar from "./RandomAvatar";
+
 
 const Chat = ({ isActive }) => {
   if (!isActive) {
