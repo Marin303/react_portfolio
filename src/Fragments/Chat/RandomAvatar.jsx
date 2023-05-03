@@ -1,5 +1,5 @@
 function randomAvatar() {
-    const avatarsContext = require.context("../Chat/images", false, /\.png$/);
+    const avatarsContext = require.context("../../Components/Chat/images", false, /\.png$/);
     const avatars = avatarsContext.keys().map(avatarsContext);
   
     let lastAvatarIndex = null;

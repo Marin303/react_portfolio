@@ -1,10 +1,11 @@
 
 import React, { useState, useEffect } from "react";
-import "../../App.css"
-import Messages from "./Messages";
-import Input from "./Input";
-import NameSetup from "./NameSetup";
-import randomAvatar from "./RandomAvatar";
+/* import "../../App.css" */
+import styles from "./chat-style.module.css"
+import Messages from "../../Fragments/Chat/Messages";
+import Input from "../../Fragments/Chat/Input";
+import NameSetup from "../../Fragments/Chat/NameSetup";
+import randomAvatar from "../../Fragments/Chat/RandomAvatar";
 
 
 const Chat = ({ isActive }) => {
@@ -12,7 +13,7 @@ const Chat = ({ isActive }) => {
     return null;
   }
   return (
-    <div>
+    <div /* className="{styles.App}" */>
       <h2>Chat</h2>
       <ChatStart/>
     </div>
@@ -98,4 +99,3 @@ const ChatStart = () => {
 }
 
 export default Chat;
-/* export default ChatStart */
