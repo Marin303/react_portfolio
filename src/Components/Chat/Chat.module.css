@@ -1,4 +1,4 @@
-/* .App {
+.Chat {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -67,14 +67,14 @@ h1 {
   margin: 0 10px -10px;
 }
 
-.Message-content > .username {
+.MessageContent > .username {
   display: block;
   color: #92a4b4;
   font-size: 14px;
   padding-bottom: 4px;
 }
 
-.Message-content > .text {
+.MessageContent > .text {
   padding: 10px;
   max-width: 400px;
   word-wrap: break-word;
@@ -94,7 +94,7 @@ form {
   margin: 0 auto 40px;
 }
 
-.thisMember > .Message-content .text {
+.thisMember > .MessageContent .text {
   background-color: #92a4b4;
   color: black;
 }
@@ -149,4 +149,6 @@ button:after {
   z-index: -1;
   border-radius: 5px;
 }
- */
+/* h2{
+  display: flex;
+} */

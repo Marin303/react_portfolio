@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 /* import "../../App.css" */
-import styles from "./chat-style.module.css"
+import ChatStyles from "./Chat.module.css"
 import Messages from "../../Fragments/Chat/Messages";
 import Input from "../../Fragments/Chat/Input";
 import NameSetup from "../../Fragments/Chat/NameSetup";
@@ -13,8 +13,7 @@ const Chat = ({ isActive }) => {
     return null;
   }
   return (
-    <div /* className="{styles.App}" */>
-      <h2>Chat</h2>
+    <div className={ChatStyles.Chat}>
       <ChatStart/>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-
+import ChatStyles from "../../Components/Chat/Chat.module.css"
 function Messages({ messages, thisMember }) {
   function renderMessage(message, thisMember) {
     const { member, data } = message;
@@ -11,7 +11,7 @@ function Messages({ messages, thisMember }) {
         <span className="avatar">
           <img src={member.clientData.avatar} alt="Avatar" />
         </span>
-        <div className="Message-content">
+        <div className={ChatStyles.MessageContent}>
           <div className="username">{member.clientData.username}</div>
           <div className="text">{data}</div>
         </div>

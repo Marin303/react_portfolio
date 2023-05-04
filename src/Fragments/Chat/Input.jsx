@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import ChatStyles from "../../Components/Chat/Chat.module.css"
+
 
 class Input extends Component {
   state = {
@@ -17,7 +19,7 @@ class Input extends Component {
 
   render() {
     return (
-      <div className="InputForm">
+      <div className={ChatStyles.InputForm}>
         <form onSubmit={e => this.onSubmit(e)}>
           <input
             onChange={e => this.onChange(e)}
@@ -26,7 +28,7 @@ class Input extends Component {
             placeholder="Enter your message and press ENTER"
             autoFocus={true}
           />
-          <button>Send</button>
+          <button className={ChatStyles.button}>Send</button>
         </form>
       </div>
     );

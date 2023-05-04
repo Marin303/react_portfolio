@@ -60,6 +60,7 @@ body {
 
 .content {
   position: relative;
+  align-items: center;
   overflow: hidden;
   height: 92vh;
   /* had to fix to responsive*/
@@ -70,9 +71,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  
-  /* align-items: center; */
-  width: calc(var(--tab-width) * 5);
+  align-items: center;
+  /* width: calc(var(--tab-width) * 5); */
   transition: 0.3s;
 }
 
@@ -92,9 +92,9 @@ p {
 }
 
 .content-inner>div {
-  width: inherit;
+  /* width: inherit; */
   padding: 20px;
-  display: block;
+  display: flex;
 }
 
 

@@ -38,26 +38,27 @@ const App = () => {
         <div
           className="content-inner"
           >
-          <div style={{ display: activeIndex === 0 ? "block" : "none" }}>
+            <button></button>
+          <div style={{ display: activeIndex === 0 ? "flex" : "none" }}>
             <h2>Home</h2>
             <p>
               This is the tab content, you can put anything you like in here.
             </p>
           </div>
-          <div style={{ display: activeIndex === 1 ? "block" : "none" }}>
+          <div style={{ display: activeIndex === 1 ? "flex" : "none" }}>
             <h2>Account</h2>
             <p>
               This is the tab content, you can put anything you like in here.
             </p>
           </div>
-          <div style={{ display: activeIndex === 2 ? "block" : "none" }}>
+          <div style={{ display: activeIndex === 2 ? "flex" : "none" }}>
             <h2>Settings</h2>
             <p>
               This is the tab content, you can put anything you like in here.
             </p>
           </div>
           <Chat isActive={activeIndex === 3} />
-          <div style={{ display: activeIndex === 4 ? "block" : "none" }}>
+          <div style={{ display: activeIndex === 4 ? "flex" : "none" }}>
             <h2>Table</h2>
             <p>
               This is the tab content, you can put anything you like in here.
