@@ -1,16 +1,18 @@
 .Chat {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin: 50px auto;
+  /* justify-content: space-between; */
+  margin: 10px auto;
+  /* height: 50vh; */
+  /* border: 1px solid black; */
 }
 h1 {
   text-align: center;
   color: #0c2d50;
 }
-.Chat-container {
-  margin: 50px auto;
-  border: 2px solid rgb(21, 36, 77);
+.ChatContainer {
+  margin: 0 auto;
+  border: 1px solid rgb(21, 36, 77);
   border-radius: 10px;
   height: 70vh;
   justify-content: flex-end;

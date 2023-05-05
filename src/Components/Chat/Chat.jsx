@@ -41,7 +41,7 @@ const ChatStart = () => {
 
   useEffect(() => {
     if (chat.messages.length) {
-      const scrollElement = document.getElementsByClassName("MessagesList")[0];
+      const scrollElement = document.getElementsByClassName(ChatStyles.MessagesList)[0];
       scrollElement.scrollTop =
         scrollElement.scrollHeight - scrollElement.clientHeight;
       /* console.log("scrollElement: ", scrollElement) */
@@ -89,7 +89,7 @@ const ChatStart = () => {
   ) : (
     <>
       <h1>ReactWebChat</h1>
-      <div className="Chat-container">
+      <div className={ChatStyles.ChatContainer}>
         <Messages messages={chat.messages} thisMember={chat.member} />
         <Input onSendMessage={onSendMessage} />
       </div>

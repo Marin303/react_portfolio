@@ -8,15 +8,9 @@
   box-sizing: border-box;
 }
 
-html,
-body,
-.wrapper {
-  height: 100%;
-}
+
 
 body {
-  /* display: flex; */
-  /* place-items: center; */
   margin: 0;
   font-family: "Euclid Circular A", "Poppins", sans-serif;
   line-height: 1.5;
@@ -26,12 +20,8 @@ body {
 
 .widget {
   background: #ffffff;
-  /* width: var(--tab-width);  */
   border-radius: 8px;
 }
-
-
-
 .widget>header>button {
   padding: 20px;
   font-size: 15px;
@@ -59,6 +49,7 @@ body {
 }
 
 .content {
+  display: block;
   position: relative;
   align-items: center;
   overflow: hidden;
@@ -72,7 +63,7 @@ body {
   top: 0;
   left: 0;
   align-items: center;
-  /* width: calc(var(--tab-width) * 5); */
+  width: 100%;
   transition: 0.3s;
 }
 

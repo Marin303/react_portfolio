@@ -4,7 +4,9 @@ function Messages({ messages, thisMember }) {
   function renderMessage(message, thisMember) {
     const { member, data } = message;
     const senderMessage = member.id === thisMember.id;
-    const chatBubble = senderMessage ? "Messages thisMember" : "Messages";
+    const chatBubble = senderMessage
+    ? `${ChatStyles.Messages} ${ChatStyles.thisMember}`
+    : ChatStyles.Messages;
     /* console.log(member) */
     return (
       <li key={message.id} className={chatBubble}>
@@ -20,7 +22,7 @@ function Messages({ messages, thisMember }) {
   }
 
   return (
-    <ul className="MessagesList">
+    <ul className={ChatStyles.MessagesList}>
       {messages.map((m) => renderMessage(m, thisMember))}
     </ul>
   );

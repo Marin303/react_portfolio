@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import ChatStyles from "../../Components/Chat/Chat.module.css"
 
 
+
 class Input extends Component {
   state = {
     text: ""
@@ -20,7 +21,7 @@ class Input extends Component {
   render() {
     return (
       <div className={ChatStyles.InputForm}>
-        <form onSubmit={e => this.onSubmit(e)}>
+        <form onSubmit={e => this.onSubmit(e)} className={ChatStyles.form}>
           <input
             onChange={e => this.onChange(e)}
             value={this.state.text}
