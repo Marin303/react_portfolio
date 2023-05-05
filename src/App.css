@@ -8,15 +8,9 @@
   box-sizing: border-box;
 }
 
-html,
-body,
-.wrapper {
-  height: 100%;
-}
+
 
 body {
-  /* display: flex; */
-  /* place-items: center; */
   margin: 0;
   font-family: "Euclid Circular A", "Poppins", sans-serif;
   line-height: 1.5;
@@ -26,12 +20,8 @@ body {
 
 .widget {
   background: #ffffff;
-  /* width: var(--tab-width);  */
   border-radius: 8px;
 }
-
-
-
 .widget>header>button {
   padding: 20px;
   font-size: 15px;
@@ -59,7 +49,9 @@ body {
 }
 
 .content {
+  display: block;
   position: relative;
+  align-items: center;
   overflow: hidden;
   height: 92vh;
   /* had to fix to responsive*/
@@ -70,9 +62,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  
-  /* align-items: center; */
-  width: calc(var(--tab-width) * 5);
+  align-items: center;
+  width: 100%;
   transition: 0.3s;
 }
 
@@ -92,13 +83,13 @@ p {
 }
 
 .content-inner>div {
-  width: inherit;
+  /* width: inherit; */
   padding: 20px;
-  display: block;
+  display: flex;
 }
 
 
-.underline {
+/* .underline {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -106,11 +97,11 @@ p {
   height: 3px;
   background: var(--color-primary);
   transition: 0.2s;
-}
-
+} */
+      /*----------------------------------------------- With width 100% - overflow-y added */
 .widget>header {
   display: flex;
   position: relative;
-  width: 100%;
+  width: 99%;
   border-bottom: 1px solid #e2e1ef;
 }

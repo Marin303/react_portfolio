@@ -1,5 +1,5 @@
-import "./App.css";
-import Chat from "./Components/Chat";
+import './App.css';
+import Chat from "./Components/Chat/Chat"
 import { useState } from "react";
 
 /*  const buttonWidth = 64;  
@@ -17,25 +17,36 @@ const App = () => {
             onClick={() => setActiveIndex(index)}
             key={tab}
             className={`material-symbols-outlined ${
+              
               activeIndex === index ? "active" : ""
             }`}
           >
             {tab}
           </button>
         ))}
-        <div
-          className="underline"
-          /* style={{
+      <div
+  className="underline"
+  /* style={{
     transform: `translateX(${activeIndex * buttonWidth}px)`,
     width: `${buttonWidth}px`
   }} */
-        ></div>
-      </header>
+></div>
 
+      </header>
+      
       <div className="content">
-        <div className="content-inner">
-          <Chat isActive={activeIndex === 0} />
-         
+        {/* <button></button> */}
+
+        <div
+          className="content-inner"
+          >
+            
+          <div style={{ display: activeIndex === 0 ? "block" : "none" }}>
+            <h2>Home</h2>
+            <p>
+              This is the tab content, you can put anything you like in here.
+            </p>
+          </div>
           <div style={{ display: activeIndex === 1 ? "block" : "none" }}>
             <h2>Account</h2>
             <p>
@@ -48,12 +59,9 @@ const App = () => {
               This is the tab content, you can put anything you like in here.
             </p>
           </div>
-          <div style={{ display: activeIndex === 3 ? "block" : "none" }}>
-            <h2>Chat</h2>
-            <p>
-              This is the tab content, you can put anything you like in here.
-            </p>
-          </div>
+          
+          <Chat isActive={activeIndex === 3} />
+          
           <div style={{ display: activeIndex === 4 ? "block" : "none" }}>
             <h2>Table</h2>
             <p>
@@ -65,5 +73,6 @@ const App = () => {
     </article>
   );
 };
+
 
 export default App;
