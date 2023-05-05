@@ -89,7 +89,7 @@ p {
 }
 
 
-.underline {
+/* .underline {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -97,11 +97,11 @@ p {
   height: 3px;
   background: var(--color-primary);
   transition: 0.2s;
-}
-
+} */
+      /*----------------------------------------------- With width 100% - overflow-y added */
 .widget>header {
   display: flex;
   position: relative;
-  width: 100%;
+  width: 99%;
   border-bottom: 1px solid #e2e1ef;
 }

@@ -10,12 +10,12 @@ function Messages({ messages, thisMember }) {
     /* console.log(member) */
     return (
       <li key={message.id} className={chatBubble}>
-        <span className="avatar">
+        <span className={ChatStyles.avatar}>
           <img src={member.clientData.avatar} alt="Avatar" />
         </span>
         <div className={ChatStyles.MessageContent}>
-          <div className="username">{member.clientData.username}</div>
-          <div className="text">{data}</div>
+          <div className={ChatStyles.username}>{member.clientData.username}</div>
+          <div className={ChatStyles.text}>{data}</div>
         </div>
       </li>
     );
