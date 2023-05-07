@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import ChatStyles from '../../Components/Chat/Chat.module.css'
 function NameSetup(props) {
   const [username, setUsername] = useState("");
 
@@ -13,9 +13,10 @@ function NameSetup(props) {
   };
 
   return (
-    <div className="nameSetupWrapper">
-      <div className="NameSetup">
-        <h1>Enter your name to join the chat</h1>
+    <div className={ChatStyles.nameSetupWrapper}>
+      <div className={ChatStyles.NameSetup}>
+        <h1>Chat App</h1><br />
+        <h2>Enter your name to join the chat</h2>
         <form onSubmit={handleSubmitForm}>
           <input
             type="text"
@@ -24,7 +25,7 @@ function NameSetup(props) {
             onChange={handleUsernameChange}
             maxLength={20}
           />
-          <button type="submit">Join</button>
+          <button type="submit" className={ChatStyles.ChatBtn}>Join</button>
         </form>
       </div>
     </div>

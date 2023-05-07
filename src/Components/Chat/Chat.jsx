@@ -88,7 +88,7 @@ const ChatStart = () => {
     <NameSetup handleSubmitForm={handleSubmitForm} />
   ) : (
     <>
-      <h1>ReactWebChat</h1>
+      <h1>React Web chat</h1>
       <div className={ChatStyles.ChatContainer}>
         <Messages messages={chat.messages} thisMember={chat.member} />
         <Input onSendMessage={onSendMessage} />
