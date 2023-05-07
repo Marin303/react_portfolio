@@ -1,11 +1,13 @@
 import './App.css';
 import Home from "./Components/Home/Home"
 import Chat from "./Components/Chat/Chat"
+import Contact from "./Components/Contact/Contact"
+import Weather from './Components/Weather/Weather';
 import { useState } from "react";
 
 /*  const buttonWidth = 64;  
  const tabWidth = 300;   */
-const tabHeaders = ["home", "lock", "settings", "groups", "table_view"];
+const tabHeaders = ["home", "partly_cloudy_day", "forum", "mail"];
 /* const tabContent = [];*/
 const App = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -43,27 +45,14 @@ const App = () => {
           >
             
          <Home isActive={activeIndex === 0}/>
-          <div style={{ display: activeIndex === 1 ? "block" : "none" }}>
-            <h2>Account</h2>
-            <p>
-              This is the tab content, you can put anything you like in here.
-            </p>
-          </div>
-          <div style={{ display: activeIndex === 2 ? "block" : "none" }}>
-            <h2>Settings</h2>
-            <p>
-              This is the tab content, you can put anything you like in here.
-            </p>
-          </div>
+       
+          <Weather isActive={activeIndex === 1}/>
+            
           
-          <Chat isActive={activeIndex === 3} />
+          <Chat isActive={activeIndex === 2} />
           
-          <div style={{ display: activeIndex === 4 ? "block" : "none" }}>
-            <h2>Table</h2>
-            <p>
-              This is the tab content, you can put anything you like in here.
-            </p>
-          </div>
+          <Contact isActive={activeIndex === 3 }/>
+         
         </div>
       </div>
     </article>

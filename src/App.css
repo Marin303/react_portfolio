@@ -85,7 +85,7 @@ p {
 .content-inner>div {
   /* justify-content: center; */
   /* width: inherit; */
-  padding: 20px;
+ /*  padding: 20px; */
   display: block;
   text-align: center;
   margin: 50px auto;

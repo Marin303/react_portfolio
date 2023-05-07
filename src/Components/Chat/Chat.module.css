@@ -53,7 +53,7 @@ h1 {
 }
 
 .nameSetupWrapper {
-  margin-top: 20vh;
+  /* margin-top: 20vh; */
   display: flex;
   justify-content: center;
 }

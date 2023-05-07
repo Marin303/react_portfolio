@@ -15,7 +15,8 @@ function NameSetup(props) {
   return (
     <div className={ChatStyles.nameSetupWrapper}>
       <div className={ChatStyles.NameSetup}>
-        <h1>Enter your name to join the chat</h1>
+        <h1>Chat App</h1><br />
+        <h2>Enter your name to join the chat</h2>
         <form onSubmit={handleSubmitForm}>
           <input
             type="text"

@@ -11,8 +11,8 @@ const Home = ({ isActive }) => {
       <p>Welcome to my <i>Portfolio</i></p>
       <p>Here i will represent me and my projects together</p>
       <img src={me} alt="me" style={{ 
-        clipPath: 'circle(50%)', 
-        WebkitClipPath: 'circle(50%)',
+        clipPath: 'circle(40%)', 
+        WebkitClipPath: 'circle(40%)',
         width:'30%' 
       }} />    </div>
   );
