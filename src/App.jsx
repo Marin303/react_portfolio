@@ -24,13 +24,13 @@ const App = () => {
             {tab}
           </button>
         ))}
-      <div
+{/*       <div
   className="underline"
-  /* style={{
+  style={{
     transform: `translateX(${activeIndex * buttonWidth}px)`,
     width: `${buttonWidth}px`
-  }} */
-></div>
+  }}
+></div> */}
 
       </header>
       

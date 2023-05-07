@@ -29,7 +29,7 @@ class Input extends Component {
             placeholder="Enter your message and press ENTER"
             autoFocus={true}
           />
-          <button className={ChatStyles.button}>Send</button>
+          <button className={ChatStyles.ChatBtn}>Send</button>
         </form>
       </div>
     );
