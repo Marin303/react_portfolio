@@ -83,9 +83,12 @@ p {
 }
 
 .content-inner>div {
+  /* justify-content: center; */
   /* width: inherit; */
   padding: 20px;
-  display: flex;
+  display: block;
+  text-align: center;
+  margin: 50px auto;
 }
 
 

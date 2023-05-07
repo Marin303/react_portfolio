@@ -1,4 +1,5 @@
 import './App.css';
+import Home from "./Components/Home/Home"
 import Chat from "./Components/Chat/Chat"
 import { useState } from "react";
 
@@ -41,12 +42,7 @@ const App = () => {
           className="content-inner"
           >
             
-          <div style={{ display: activeIndex === 0 ? "block" : "none" }}>
-            <h2>Home</h2>
-            <p>
-              This is the tab content, you can put anything you like in here.
-            </p>
-          </div>
+         <Home isActive={activeIndex === 0}/>
           <div style={{ display: activeIndex === 1 ? "block" : "none" }}>
             <h2>Account</h2>
             <p>
