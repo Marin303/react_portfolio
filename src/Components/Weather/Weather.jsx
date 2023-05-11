@@ -1,26 +1,35 @@
 import React, { useEffect, useState } from "react";
 import ChatCss from "../../Components/Chat/Chat.module.css";
 
-const useWeatherFetch = () => {
-  const [weather, setWeather] = useState("");
+const useWeatherFetch = (lat, lon) => {
   const [data, setData] = useState(null);
-  
+
   useEffect(() => {
-    fetch(`https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m
-    `)
+    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
-        setWeather(data);
       });
-  }, []);
-  
-  return [data, weather];
+  }, [lat, lon]);
+
+  return data;
 };
 
 const Weather = ({ isActive }) => {
-  const [data, weather] = useWeatherFetch();
-  
+  const [location, setLocation] = useState("");
+  const [lat, setLat] = useState("");
+  const [lon, setLon] = useState("");
+  const data = useWeatherFetch(lat, lon);
+
+  const searchLocation = () => {
+    fetch(`https://nominatim.openstreetmap.org/search/${location}?format=json&addressdetails=1&limit=1&polygon_svg=1`)
+      .then((res) => res.json())
+      .then((data) => {
+        setLat(data[0].lat);
+        setLon(data[0].lon);
+      });
+  };
+
   if (!isActive) {
     return null;
   }
@@ -29,13 +38,18 @@ const Weather = ({ isActive }) => {
     <div>
       <div className="WeatherContainer">
         <h1>Weather</h1>
-        <input type="text" />
-        <button className={ChatCss.ChatBtn} onClick={useWeatherFetch}>
+        <input
+          type="text"
+          onChange={(event) => setLocation(event.target.value)}
+          value={location}
+          autoFocus={true}
+        />
+        <button className={ChatCss.ChatBtn} onClick={searchLocation}>
           SEARCH
         </button>
-        {data &&(
+        {data && (
           <div>
-            <p>Temperature: {weather.hourly.temperature_2m[0]}°C</p>
+            <p>Temperature: {data.hourly.temperature_2m}°C</p>
           </div>
         )}
       </div>
@@ -44,3 +58,4 @@ const Weather = ({ isActive }) => {
 };
 
 export default Weather;
+
