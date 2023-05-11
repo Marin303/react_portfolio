@@ -3,7 +3,7 @@ import ChatCss from "../../Components/Chat/Chat.module.css";
 
 const useWeatherFetch = (lat, lon) => {
   const [data, setData] = useState(null);
-console.log(data);
+
   useEffect(() => {
     fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}`)
       .then((res) => res.json())
@@ -13,7 +13,7 @@ console.log(data);
       
       .catch(()=> console.log("failed to load"))
   }, [lat, lon]);
-
+console.log(data);
   return data;
 };
 
@@ -50,7 +50,7 @@ const Weather = ({ isActive }) => {
         <button className={ChatCss.ChatBtn} onClick={searchLocation}>
           SEARCH
         </button>
-        {data && (
+        {data?.hourly && (
           <div>
             <p>Temperature: {data.hourly.temperature_2m}°C</p>
           </div>
