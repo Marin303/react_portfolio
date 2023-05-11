@@ -3,13 +3,15 @@ import ChatCss from "../../Components/Chat/Chat.module.css";
 
 const useWeatherFetch = (lat, lon) => {
   const [data, setData] = useState(null);
-
+console.log(data);
   useEffect(() => {
     fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
-      });
+      })
+      
+      .catch(()=> console.log("failed to load"))
   }, [lat, lon]);
 
   return data;
@@ -27,8 +29,9 @@ const Weather = ({ isActive }) => {
       .then((data) => {
         setLat(data[0].lat);
         setLon(data[0].lon);
-      });
-  };
+      })
+      .catch(()=> console.log("failed to load"))
+  }
 
   if (!isActive) {
     return null;
