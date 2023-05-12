@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ChatCss from "../../Components/Chat/Chat.module.css";
 
 const useWeatherFetch = (location) => {
@@ -6,7 +6,7 @@ const useWeatherFetch = (location) => {
 
   console.log("Weather", weather);
 
-  useEffect(() => {
+  const fetchWeatherData = () => {
     console.log(`Location: ${location}`);
     if (location) {
       fetch(
@@ -18,24 +18,19 @@ const useWeatherFetch = (location) => {
         })
         .catch(() => console.log("Failed to load weather data"));
     }
-  }, [location]);
+  };
 
-  return weather;
+  return { weather, fetchWeatherData };
 };
 
 const Weather = ({ isActive }) => {
   const [location, setLocation] = useState("");
-  const weather = useWeatherFetch(location);
+  const { weather, fetchWeatherData } = useWeatherFetch(location);
 
-  const searchLocation = () => {
-    setLocation(location);
-  };
 
   if (!isActive) {
     return null;
   }
-
-  console.log("Weather:", weather);
 
   return (
     <div>
@@ -47,13 +42,15 @@ const Weather = ({ isActive }) => {
           value={location}
           autoFocus={true}
         />
-        <button className={ChatCss.ChatBtn} onClick={searchLocation}>
+        <button className={ChatCss.ChatBtn} onClick={fetchWeatherData}>
           SEARCH
         </button>
 
         {weather?.main && (
           <div>
+            <p>Country: {weather.name}</p>
             <p>Temperature: {weather.main.temp}°C</p>
+            <p>Weather: {weather.weather[0].description} </p>
           </div>
         )}
       </div>
