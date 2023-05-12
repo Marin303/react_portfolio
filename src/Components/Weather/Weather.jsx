@@ -1,46 +1,43 @@
 import React, { useEffect, useState } from "react";
 import ChatCss from "../../Components/Chat/Chat.module.css";
 
-const useWeatherFetch = (lat, lon) => {
-  const [data, setData] = useState(null);
+const useWeatherFetch = (city) => {
+  const [weather, setWeather] = useState(null);
+
+  console.log("Weather", weather);
 
   useEffect(() => {
-    if (lat && lon) {
-      fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}`)
+    console.log(`City: ${city}`);
+    if (city) {
+      fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=process.env.REACT_APP_API_KEY&units=metric`
+      )
         .then((res) => res.json())
         .then((data) => {
-          setData(data);
+          setWeather(data);
         })
-        .catch(()=> console.log("failed to load"))
+        .catch(() => console.log("Failed to load weather data"));
     }
-  }, [lat, lon]);
+  }, [city]);
 
-  return data;
+  return weather;
 };
-
 
 const Weather = ({ isActive }) => {
   const [location, setLocation] = useState("");
-  const [lat, setLat] = useState("");
-  const [lon, setLon] = useState("");
-  const data = useWeatherFetch(lat, lon);
+  const [weatherCity, setWeatherCity] = useState("");
+  const weather = useWeatherFetch(weatherCity);
 
   const searchLocation = () => {
-    fetch(
-      `https://nominatim.openstreetmap.org/search/${location}?format=json&addressdetails=1&limit=1&polygon_svg=1`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setLat(data[0].lat);
-        setLon(data[0].lon);
-      })
-      .catch(() => console.log("failed to load"));
+    setWeatherCity(location);
   };
 
   if (!isActive) {
     return null;
   }
-  /* console.log(`Data:`, data?.hourly.temperature_2m); */
+
+  console.log("Weather:", weather);
+
   return (
     <div>
       <div className="WeatherContainer">
@@ -48,17 +45,16 @@ const Weather = ({ isActive }) => {
         <input
           type="text"
           onChange={(e) => setLocation(e.target.value)}
-          /* defaultValue={location} */
           value={location}
           autoFocus={true}
         />
         <button className={ChatCss.ChatBtn} onClick={searchLocation}>
           SEARCH
         </button>
-       
-        {data?.hourly && data.hourly.temperature_2m && (
+
+        {weather?.main && (
           <div>
-            <p>Temperature: {data.hourly}°C</p>
+            <p>Temperature: {weather.main.temp}°C</p>
           </div>
         )}
       </div>
