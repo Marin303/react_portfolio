@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import ChatCss from "../../Components/Chat/Chat.module.css";
 
-const useWeatherFetch = (city) => {
+const useWeatherFetch = (location) => {
   const [weather, setWeather] = useState(null);
 
   console.log("Weather", weather);
 
   useEffect(() => {
-    console.log(`City: ${city}`);
-    if (city) {
+    console.log(`Location: ${location}`);
+    if (location) {
       fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=process.env.REACT_APP_API_KEY&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
       )
         .then((res) => res.json())
         .then((data) => {
@@ -18,18 +18,17 @@ const useWeatherFetch = (city) => {
         })
         .catch(() => console.log("Failed to load weather data"));
     }
-  }, [city]);
+  }, [location]);
 
   return weather;
 };
 
 const Weather = ({ isActive }) => {
   const [location, setLocation] = useState("");
-  const [weatherCity, setWeatherCity] = useState("");
-  const weather = useWeatherFetch(weatherCity);
+  const weather = useWeatherFetch(location);
 
   const searchLocation = () => {
-    setWeatherCity(location);
+    setLocation(location);
   };
 
   if (!isActive) {
