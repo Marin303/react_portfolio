@@ -7,7 +7,8 @@ const useWeatherFetch = (location) => {
   console.log("Weather", weather);
 
   const fetchWeatherData = () => {
-    console.log(`Location: ${location}`);
+    /* console.log(`Location: ${location}`); */
+
     if (location) {
       fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
@@ -26,7 +27,6 @@ const useWeatherFetch = (location) => {
 const Weather = ({ isActive }) => {
   const [location, setLocation] = useState("");
   const { weather, fetchWeatherData } = useWeatherFetch(location);
-
 
   if (!isActive) {
     return null;
@@ -48,9 +48,16 @@ const Weather = ({ isActive }) => {
 
         {weather?.main && (
           <div>
-            <p>Country: {weather.name}</p>
+            <p>Search: {weather.name}</p>
+            <p>Country: {weather.sys.country}</p>
             <p>Temperature: {weather.main.temp}°C</p>
-            <p>Weather: {weather.weather[0].description} </p>
+            <p>Weather: {weather.weather[0].description}</p>
+            {weather.weather[0].icon && (
+              <img
+                src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
+                alt="Weather Icon"
+              />
+            )}
           </div>
         )}
       </div>
