@@ -22,6 +22,7 @@ body {
   background: #ffffff;
   border-radius: 8px;
 }
+
 .widget>header>button {
   padding: 20px;
   font-size: 15px;
@@ -38,6 +39,7 @@ body {
 
 .widget>header>button:not(.active) {
   opacity: 0.7;
+
 }
 
 .widget>header>button:hover:not(.active) {
@@ -46,7 +48,9 @@ body {
 
 .widget>header>button.active {
   color: var(--color-primary);
+  /*  border-bottom: 1px solid #5644fd; */
 }
+
 
 .content {
   display: block;
@@ -55,7 +59,7 @@ body {
   overflow: hidden;
   height: 92vh;
   /* had to fix to responsive*/
-
+  background-color: #f5f5f6;
 }
 
 .content-inner {
@@ -70,75 +74,80 @@ body {
 
 
 h2 {
-  
+
   margin: 0 0 10px;
   font-size: 18px;
   font-weight: 600;
 }
 
 p {
-  
+
   margin: 0;
   font-size: 14px;
 }
 
 .content-inner>div {
-  /* justify-content: center; */
-  /* width: inherit; */
- /*  padding: 20px; */
-
   display: block;
   text-align: center;
   margin: 50px auto;
 }
 
 
-/* .underline {
+.underline {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 64px;
+  /* width: 64px; */
   height: 3px;
   background: var(--color-primary);
   transition: 0.2s;
-} */
-      /*----------------------------------------------- With width 100% - overflow-y added */
+}
+
+/*----------------------------------------------- With width 100% - overflow-y added */
 .widget>header {
   display: flex;
   position: relative;
   width: 99%;
-  border-bottom: 1px solid #e2e1ef;
+ /*  border-bottom: 1px solid #e2e1ef; */
 }
 
 /* --------------------Contact.jsx */
-.ContactContainer{
+.ContactContainer {
   /* border: 1px solid black; */
   margin: 5% 20%;
   display: flex;
   justify-content: space-around;
-  
+
 }
-.ContactContainer > a{
+
+.ContactContainer>a {
   text-decoration: none;
 }
 
 /* ----------------------------Weather */
-.WeatherContainer{
-/* border: 1px solid black; */
-align-items: center;
+.WeatherContainer {
+  display: block;
+  /* align-items: center; */
 
-/* display: flex;
-  justify-content: center; */
 }
-.WeatherContainer > button{
+
+.WeatherContainer>button {
   width: 15%;
-  height:3vh ;
+  height: 3vh;
   display: inline-block;
   padding: 1px;
+  background-color: #918db7;
 }
-.WeatherContainer > h1{
+
+.WeatherContainer>h1 {
   display: block;
 }
-.WeatherContainer > input{
+
+.WeatherContainer>input {
   width: 50%;
+}
+
+.weatherValues {
+  margin: 50px;
+
 }
