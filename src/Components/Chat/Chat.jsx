@@ -1,12 +1,10 @@
-
 import React, { useState, useEffect } from "react";
 /* import "../../App.css" */
-import ChatStyles from "./Chat.module.css"
+import ChatStyles from "./Chat.module.css";
 import Messages from "../../Fragments/Chat/Messages";
 import Input from "../../Fragments/Chat/Input";
 import NameSetup from "../../Fragments/Chat/NameSetup";
 import randomAvatar from "../../Fragments/Chat/RandomAvatar";
-
 
 const Chat = ({ isActive }) => {
   if (!isActive) {
@@ -14,13 +12,10 @@ const Chat = ({ isActive }) => {
   }
   return (
     <div className={ChatStyles.Chat}>
-      <ChatStart/>
+      <ChatStart />
     </div>
   );
 };
-
-
-
 
 const ChatStart = () => {
   const initialChatState = {
@@ -41,7 +36,9 @@ const ChatStart = () => {
 
   useEffect(() => {
     if (chat.messages.length) {
-      const scrollElement = document.getElementsByClassName(ChatStyles.MessagesList)[0];
+      const scrollElement = document.getElementsByClassName(
+        ChatStyles.MessagesList
+      )[0];
       scrollElement.scrollTop =
         scrollElement.scrollHeight - scrollElement.clientHeight;
       /* console.log("scrollElement: ", scrollElement) */
@@ -88,13 +85,13 @@ const ChatStart = () => {
     <NameSetup handleSubmitForm={handleSubmitForm} />
   ) : (
     <>
-      <h1>React Web chat</h1>
+      <h2>React Web chat</h2>
       <div className={ChatStyles.ChatContainer}>
         <Messages messages={chat.messages} thisMember={chat.member} />
         <Input onSendMessage={onSendMessage} />
       </div>
     </>
   );
-}
+};
 
 export default Chat;

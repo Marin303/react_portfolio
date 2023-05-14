@@ -4,11 +4,7 @@ import ChatCss from "../../Components/Chat/Chat.module.css";
 const useWeatherFetch = (location) => {
   const [weather, setWeather] = useState(null);
 
-  console.log("Weather", weather);
-
   const fetchWeatherData = () => {
-    /* console.log(`Location: ${location}`); */
-
     if (location) {
       fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
@@ -27,40 +23,53 @@ const useWeatherFetch = (location) => {
 const Weather = ({ isActive }) => {
   const [location, setLocation] = useState("");
   const { weather, fetchWeatherData } = useWeatherFetch(location);
+const [checkCondition, setCheckCondition] = useState(false)
 
   if (!isActive) {
     return null;
   }
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setLocation("");
+    setCheckCondition(true)
+  };
+
   return (
     <div>
-      <div className="WeatherContainer">
-        <h1>Weather</h1>
+      <h2>Weather APP</h2>
+      <form onSubmit={onSubmit} className="WeatherContainer">
         <input
           type="text"
           onChange={(e) => setLocation(e.target.value)}
           value={location}
           autoFocus={true}
+          placeholder="Enter country/city name"
         />
         <button className={ChatCss.ChatBtn} onClick={fetchWeatherData}>
-          SEARCH
+          Search
         </button>
+      </form>
 
-        {weather?.main && (
-          <div>
-            <p>Search: {weather.name}</p>
-            <p>Country: {weather.sys.country}</p>
-            <p>Temperature: {weather.main.temp}°C</p>
-            <p>Weather: {weather.weather[0].description}</p>
-            {weather.weather[0].icon && (
-              <img
-                src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
-                alt="Weather Icon"
-              />
-            )}
-          </div>
-        )}
-      </div>
+      {weather?.main ? (
+        <div className="weatherValues">
+          <p>Search: {weather.name}</p>
+          <p>Country: {weather.sys.country}</p>
+          <p>Temperature: {weather.main.temp}°C</p>
+          <p>Weather: {weather.weather[0].description}</p>
+          <br />
+          <p>Visual display of current weather:</p>
+          {weather.weather[0].icon && (
+            <img
+              src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
+              alt="Weather Icon"
+            />
+          )}
+        </div>
+      ) : (
+        checkCondition &&
+        <p>No weather data found for the given location</p>
+      )}
     </div>
   );
 };
