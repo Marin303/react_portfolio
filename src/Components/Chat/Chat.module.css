@@ -141,6 +141,9 @@ input:focus {
   z-index: -1;
   border-radius: 5px;
 }
-/* h2{
-  display: flex;
-} */
+
+@media only screen and (max-width: 450px) {
+  .ChatContainer{
+    width: auto;
+}
+}
