@@ -13,22 +13,23 @@ function NameSetup(props) {
   };
 
   return (
-    <div className={ChatStyles.nameSetupWrapper}>
+    <>
       <div className={ChatStyles.NameSetup}>
         <h2>Chat APP</h2><br />
         <h2>Enter your name to join the chat</h2>
-        <form onSubmit={handleSubmitForm}>
+        <form onSubmit={handleSubmitForm} className={ChatStyles.ChatForm}>
           <input
             type="text"
             placeholder="Enter chat name - max 20 characters"
             value={username}
             onChange={handleUsernameChange}
             maxLength={20}
+            className={ChatStyles.input}
           />
           <button type="submit" className={ChatStyles.ChatBtn}>Join</button>
         </form>
       </div>
-    </div>
+    </>
   );
 }
 
