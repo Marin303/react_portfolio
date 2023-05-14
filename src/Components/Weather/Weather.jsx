@@ -23,6 +23,7 @@ const useWeatherFetch = (location) => {
 const Weather = ({ isActive }) => {
   const [location, setLocation] = useState("");
   const { weather, fetchWeatherData } = useWeatherFetch(location);
+const [checkCondition, setCheckCondition] = useState(false)
 
   if (!isActive) {
     return null;
@@ -31,6 +32,7 @@ const Weather = ({ isActive }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     setLocation("");
+    setCheckCondition(true)
   };
 
   return (
@@ -65,6 +67,7 @@ const Weather = ({ isActive }) => {
           )}
         </div>
       ) : (
+        checkCondition &&
         <p>No weather data found for the given location</p>
       )}
     </div>
