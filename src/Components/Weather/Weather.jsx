@@ -37,7 +37,7 @@ const [checkCondition, setCheckCondition] = useState(false)
 
   return (
     <div>
-      <h1>Weather</h1>
+      <h2>Weather APP</h2>
       <form onSubmit={onSubmit} className="WeatherContainer">
         <input
           type="text"

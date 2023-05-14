@@ -132,6 +132,7 @@ p {
 }
 /* ----------------------------Weather */
 .WeatherContainer {
+  margin-top: 5vh;
   display: block;
   /* align-items: center; */
 
