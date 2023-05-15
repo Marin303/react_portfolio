@@ -108,7 +108,7 @@ p {
   display: flex;
   position: relative;
   width: 99%;
- /*  border-bottom: 1px solid #e2e1ef; */
+  /*  border-bottom: 1px solid #e2e1ef; */
 }
 
 /* --------------------Contact.jsx */
@@ -124,39 +124,41 @@ p {
   text-decoration: none;
   color: #534e87;
 }
+
 .ContactContainer>a:active {
   color: orangered;
 }
-.ContactContainer> a > i {
- margin-right: 10px;
+
+.ContactContainer>a>i {
+  margin-right: 10px;
 }
+
 /* ----------------------------Weather */
 .WeatherContainer {
   margin-top: 5vh;
   display: block;
-  /* align-items: center; */
-
+  align-items: center;
+  padding: 20px;
 }
 
-.WeatherContainer>button {
-  /* width: 15%; */
+/* .WeatherContainer>button {
+ 
   height: 3vh;
   display: inline-block;
   padding: 0 5px 0 5px;
   background-color: #918db7;
-}
+} */
 
 .WeatherContainer>h1 {
   display: block;
 }
 
-.WeatherContainer>input {
-  /* padding: 5px; */
-  width: 50%;
-}
+/* .WeatherContainer>input {
+  
+ 
+} */
 
 .weatherValues {
   margin: 50px;
 
 }
-
