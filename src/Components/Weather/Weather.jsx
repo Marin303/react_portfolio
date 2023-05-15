@@ -29,7 +29,7 @@ const [checkCondition, setCheckCondition] = useState(false)
     return null;
   }
 
-  const onSubmit = (e) => {
+  const handleOnSubmit = (e) => {
     e.preventDefault();
     setLocation("");
     setCheckCondition(true)
@@ -38,7 +38,7 @@ const [checkCondition, setCheckCondition] = useState(false)
   return (
     <div>
       <h2>Weather APP</h2>
-      <form onSubmit={onSubmit} className="WeatherContainer">
+      <form onSubmit={handleOnSubmit} className="WeatherContainer">
         <input
           type="text"
           onChange={(e) => setLocation(e.target.value)}
