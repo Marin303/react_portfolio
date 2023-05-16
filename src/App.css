@@ -97,10 +97,11 @@ p {
 
 /* --------------------Contact.jsx */
 .ContactContainer {
-  /* margin: 5% 20%; */
+  
   align-items: center;
-  margin: 10vw 10vw;
-  display: flex;
+  margin: 5vw 15vw;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
   justify-content: space-between;
 
 }
