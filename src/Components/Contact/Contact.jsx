@@ -20,6 +20,9 @@ const Contact = ({ isActive }) => {
         <a href="https://github.com/Marin303">
           <i className="fa fa-github fa-2x" aria-hidden="true"></i>Github
         </a>
+        <a href="mailto:marin.muktic3@gmail.com">
+        <i className="fa fa-envelope fa-2x" aria-hidden="true"></i>Email
+        </a>
       </div>
     </div>
   );
