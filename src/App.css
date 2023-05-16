@@ -34,7 +34,6 @@ body {
   font-size: 24px;
   transition: 0.3s;
   flex: 1;
-  /*new added*/
 }
 
 .widget>header>button:not(.active) {
@@ -48,7 +47,6 @@ body {
 
 .widget>header>button.active {
   color: var(--color-primary);
-  /*  border-bottom: 1px solid #5644fd; */
 }
 
 
@@ -57,8 +55,7 @@ body {
   position: relative;
   align-items: center;
   overflow: hidden;
-  height: 92vh;
-  /* had to fix to responsive*/
+  height: 91vh;
   background-color: #f5f5f6;
 }
 
@@ -92,31 +89,19 @@ p {
   margin: 50px auto;
 }
 
-
-/* .underline {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  
-  height: 3px;
-  background: var(--color-primary);
-  transition: 0.2s;
-} */
-
-/*----------------------------------------------- With width 100% - overflow-y added */
 .widget>header {
   display: flex;
   position: relative;
   width: 99%;
-  /*  border-bottom: 1px solid #e2e1ef; */
 }
 
 /* --------------------Contact.jsx */
 .ContactContainer {
-  /* border: 1px solid black; */
-  margin: 5% 20%;
+  /* margin: 5% 20%; */
+  align-items: center;
+  margin: 10vw 10vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 
 }
 
@@ -135,30 +120,29 @@ p {
 
 /* ----------------------------Weather */
 .WeatherContainer {
-  margin-top: 5vh;
+  margin-top: 10vh;
   display: block;
   align-items: center;
   padding: 20px;
 }
 
-/* .WeatherContainer>button {
- 
-  height: 3vh;
-  display: inline-block;
-  padding: 0 5px 0 5px;
-  background-color: #918db7;
-} */
-
-.WeatherContainer>h1 {
-  display: block;
+.weatherBackground>h2 {
+  position: relative;
+  top:5vh;
 }
-
-/* .WeatherContainer>input {
-  
- 
-} */
 
 .weatherValues {
   margin: 50px;
-
+  color: rgb(153, 67, 67);
+}
+.weatherBackground{
+  background-image: url("./Components/Weather/background-img/weather.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  top: -7vh;
+  height: 100vh;
+  text-align: center;
+  align-items: center;
 }

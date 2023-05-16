@@ -24,6 +24,7 @@ function NameSetup(props) {
             value={username}
             onChange={handleUsernameChange}
             maxLength={20}
+            autoFocus={true}
             className={ChatStyles.input}
           />
           <button type="submit" className={ChatStyles.ChatBtn}>Join</button>
