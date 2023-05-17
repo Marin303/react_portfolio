@@ -25,7 +25,6 @@ body {
 
 .widget>header>button {
   padding: 20px;
-  font-size: 15px;
   width: var(--button-width);
   cursor: pointer;
   background: transparent;
