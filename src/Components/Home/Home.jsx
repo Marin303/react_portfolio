@@ -1,6 +1,8 @@
 import React from "react";
 import me from "./images/me.png";
 import croatia_flag from "./images/croatia_flag.png";
+import Spell from "../../Fragments/Home/Spell";
+
 const Home = ({ isActive }) => {
   if (!isActive) {
     return null;
@@ -15,7 +17,7 @@ const Home = ({ isActive }) => {
       <div className="country">
         <p> Coming from:</p>
         <a href="https://www.croatia.hr" target="_blank" rel="noreferrer">
-          <img src={croatia_flag} alt="croatia_flag"/>
+          <img src={croatia_flag} alt="croatia_flag" />
         </a>
       </div>
 
@@ -29,6 +31,7 @@ const Home = ({ isActive }) => {
           width: "160px",
         }}
       />
+      <Spell />
     </div>
   );
 };
