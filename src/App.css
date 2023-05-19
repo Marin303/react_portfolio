@@ -17,7 +17,10 @@ body {
   background: #f1f0ff;
   color: #58547b;
 }
-
+h1 {
+  text-align: center;
+  color: #58547b;;
+}
 .widget {
   background: #ffffff;
   border-radius: 8px;
@@ -97,9 +100,8 @@ p {
 
 /* --------------------Contact.jsx */
 .ContactContainer {
-  
   align-items: center;
-  margin: 5vw 15vw;
+  margin: 5vw;
   display: grid;
   grid-template-columns: auto auto auto auto;
   justify-content: space-between;
@@ -118,7 +120,13 @@ p {
 .ContactContainer>a>i {
   margin-right: 10px;
 }
-
+.country{
+  display: flex;
+  justify-content: center;
+}
+.country > p{
+  margin: 5px;
+}
 /* ----------------------------Weather */
 .WeatherContainer {
   margin-top: 10vh;
@@ -127,7 +135,7 @@ p {
   padding: 20px;
 }
 
-.weatherBackground>h2 {
+.weatherBackground>h1 {
   position: relative;
   top:5vh;
 }

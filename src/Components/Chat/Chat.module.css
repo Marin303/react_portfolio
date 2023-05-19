@@ -3,10 +3,7 @@
   flex-direction: column;
   
 }
-h1 {
-  text-align: center;
-  color: #0c2d50;
-}
+
 .ChatContainer {
   margin: 0 auto;
   padding-bottom: 20px;
